@@ -8,9 +8,11 @@ var test = ['w', 'o', 'r', 'd'];
 var Word = function (word) {
     this.displayArr = [];
     this.word = word;
+    this.wordSplit = word.split('')
     this.lettersObj = new Letter(word);
     this.letterArr = this.lettersObj.singleLetter(word)
     this.displayWord = function (arr) {
+        this.displayArr = []; 
         for (var i = 0; i < arr.length; i++) {
             if (arr[i].guessed === true) {
                 var showLetter = arr[i].letter;
@@ -25,7 +27,7 @@ var Word = function (word) {
     };
     this.wordGuess = function (arr, str) {
         for (var i = 0; i < arr.length; i++) {
-            this.lettersObj.userGuess(str);
+            this.lettersObj.userGuess(arr[i], str);
 
         }
     }

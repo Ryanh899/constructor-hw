@@ -19,13 +19,12 @@ var Letter = function (word)  {
     this.userGuess = (obj, str) => {
         if (str === obj.letter) {
             obj.guessed = true;  
-            console.log('guesssed correct')
+            console.log('guesssed correct'); 
+            return 'done'
         } else {
-            console.log('incorrect'); 
+            
         }; 
     }; 
-
-
 }; 
 
 // var test = new Letter('word'); 
